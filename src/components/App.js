@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import Form from "./Form";
-import View from "./View";
+//import View from "./View";
 import Footer from "./Footer";
 
 export default function App() {
@@ -10,7 +10,6 @@ export default function App() {
       <div className="app--container">
         <Header />
         <Form />
-        <View />
         <Footer />
       </div>
     </div>

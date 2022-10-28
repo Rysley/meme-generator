@@ -73,7 +73,7 @@ a:hover {
   justify-content: space-between;
   color: white;
   background: var(--violet);
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   border-radius: 10px 10px 0px 0px;
   letter-spacing: 0.06em;
 }
@@ -139,7 +139,6 @@ a:hover {
 .form--btn {
   width: calc(90% + 0.4rem);
   height: 2.5em;
-  margin-bottom: 2em;
   font-size: 1.2em;
   background: var(--violet);
   color: var(--card);
@@ -157,14 +156,27 @@ a:hover {
 .form--btn:active {
   transform: translateY(1px);
   filter: hue-rotate(20deg);
-/*   box-shadow: 1px 1px 6px #918484; */
+  /*   box-shadow: 1px 1px 6px #918484; */
 }
 
 .view--container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.view--image {
+  /*  width: 90%; */
+  /*   height: 370px; */
+  overflow: hidden;
+  min-height: 370px;
+}
+
+.view--image > img {
+  width: 100%;
+  object-fit: cover;
 }
 
 .footer--container {
