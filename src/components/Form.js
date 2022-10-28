@@ -5,15 +5,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRandom } from "@fortawesome/free-solid-svg-icons";
 
 export default function Form() {
- 
+  const [allMemeImg, setAllMemeImg] = React.useState(memesData.data.memes);
 
-  const [currMeme, setCurrMeme] = React.useState("");
+  const [currMeme, setCurrMeme] = React.useState({
+    topText: "",
+    bottomText: "",
+    randomImage: "https://i.imgflip.com/1g8my4.jpg",
+  });
 
   function handleClick() {
-    const memesArray = memesData.data.memes;
-    const randNum = Math.floor(Math.random() * memesArray.length);
-    const { url } = memesArray[randNum];
-    setCurrMeme(url);
+    const randNum = Math.floor(Math.random() * allMemeImg.length);
+    const { url } = allMemeImg[randNum];
+    setCurrMeme((prevMeme) => {
+      return { ...prevMeme, randomImage: url };
+    });
   }
 
   return (
@@ -35,7 +40,7 @@ export default function Form() {
           Get a random meme image <FontAwesomeIcon icon={faRandom} />
         </button>
       </div>
-      <View src={currMeme} />
+      <View src={currMeme.randomImage} />
     </div>
   );
 }
