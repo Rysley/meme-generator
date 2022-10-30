@@ -9,8 +9,8 @@ export default function App() {
   const [allMemeImg, setAllMemeImg] = React.useState(memesData.data.memes);
 
   const [currMeme, setCurrMeme] = React.useState({
-    topText: "",
-    bottomText: "",
+    topText: "TOP TEXT",
+    bottomText: "BOTTOM TEXT",
     randomImage: "https://i.imgflip.com/1g8my4.jpg",
   });
 
@@ -19,7 +19,7 @@ export default function App() {
       <div className="app--container">
         <Header />
         <Form data={allMemeImg} setCurrMeme={setCurrMeme} />
-        <View src={currMeme.randomImage} />
+        <View memeData={currMeme} />
         <Footer />
       </div>
     </div>

@@ -170,6 +170,7 @@ a:hover {
 .view--image {
   /*  width: 90%; */
   /*   height: 370px; */
+  position: relative;
   overflow: hidden;
   min-height: 370px;
 }
@@ -177,6 +178,29 @@ a:hover {
 .view--image > img {
   width: 100%;
   object-fit: cover;
+}
+
+.view--text {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  position: absolute;
+  font-size: 3.5em;
+  color: white;
+  text-align: center;
+  -webkit-text-stroke: 3px black;
+  white-space: pre-line;
+  width: 100%;
+}
+
+.view--text-top {
+  padding-top: 0.15em;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.view--text-bottom {
+  bottom: 0.15em;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 
 .footer--container {
