@@ -4,22 +4,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRandom } from "@fortawesome/free-solid-svg-icons";
 
 export default function Form(props) {
+  
   return (
     <div className="form--container">
       <div className="form--section">
         <input
+          name="topText"
           className="form--input"
           type="text"
           placeholder="Top Text"
+          onChange={props.handleText}
         ></input>
         <input
+          name="bottomText"
           className="form--input"
           type="text"
           placeholder="Bottom Text"
+          onChange={props.handleText}
         ></input>
       </div>
       <div className="form--section">
-        <button onClick={props.handleEvent} className="form--btn">
+        <button onClick={props.handleImage} className="form--btn">
           Get a random meme image <FontAwesomeIcon icon={faRandom} />
         </button>
       </div>

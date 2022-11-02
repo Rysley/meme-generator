@@ -21,11 +21,27 @@ export default function App() {
     setCurrMeme((prevMeme) => ({ ...prevMeme, randomImage: url }));
   }
 
+  function changeText(e, name) {
+    console.log(e.target.value);
+    setCurrMeme((prevInput) => {
+      return {
+        ...prevInput,
+        [name]: e.target.value
+          ? e.target.value.toUpperCase()
+          : e.target.placeholder.toUpperCase(),
+      };
+    });
+  }
+
   return (
     <div className="app--wrapper">
       <div className="app--container">
         <Header />
-        <Form handleEvent={() => changeMeme()} />
+        <Form
+          handleImage={() => changeMeme()}
+          handleText={(e) => changeText(e, e.target.name)}
+          meme={setCurrMeme}
+        />
         <View memeData={currMeme} />
         <Footer />
       </div>
