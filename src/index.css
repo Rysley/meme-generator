@@ -63,7 +63,6 @@ a:hover {
 }
 
 .app--container {
-  /*  background-color: beige; */
   grid-column-start: 2;
   grid-column-end: 3;
 }
@@ -126,8 +125,6 @@ a:hover {
   border-width: 0px;
   box-shadow: 1px 1px lightgray;
   border: none;
-  /*   -webkit-transition: 0.5s; */
-  /*   transition: 0.5s; */
   outline: none;
 }
 
@@ -156,7 +153,6 @@ a:hover {
 .form--btn:active {
   transform: translateY(1px);
   filter: hue-rotate(20deg);
-  /*   box-shadow: 1px 1px 6px #918484; */
 }
 
 .view--container {
@@ -168,11 +164,10 @@ a:hover {
 }
 
 .view--image {
-  /*  width: 90%; */
-  /*   height: 370px; */
+  width: 90%;
   position: relative;
   overflow: hidden;
-  min-height: 370px;
+  /*   min-height: 370px; */
 }
 
 .view--image > img {
@@ -240,5 +235,11 @@ a:hover {
 
   .app--wrapper {
     grid-template-columns: 1em auto 1em;
+  }
+
+  .view--text {
+    font-size: 2.5em;
+    -webkit-text-stroke: 2px black;
+    padding-bottom: 0.3em;
   }
 }

@@ -14,11 +14,18 @@ export default function App() {
     randomImage: "https://i.imgflip.com/1g8my4.jpg",
   });
 
+  function changeMeme() {
+    const randNum = Math.floor(Math.random() * allMemeImg.length);
+    const { url } = allMemeImg[randNum];
+
+    setCurrMeme((prevMeme) => ({ ...prevMeme, randomImage: url }));
+  }
+
   return (
     <div className="app--wrapper">
       <div className="app--container">
         <Header />
-        <Form data={allMemeImg} setCurrMeme={setCurrMeme} />
+        <Form handleEvent={() => changeMeme()} />
         <View memeData={currMeme} />
         <Footer />
       </div>
