@@ -21,14 +21,13 @@ export default function App() {
     setCurrMeme((prevMeme) => ({ ...prevMeme, randomImage: url }));
   }
 
-  function changeText(e, name) {
-    console.log(e.target.value);
+  function changeText(e) {
+    const { name, value } = e.target;
+
     setCurrMeme((prevInput) => {
       return {
         ...prevInput,
-        [name]: e.target.value
-          ? e.target.value.toUpperCase()
-          : e.target.placeholder.toUpperCase(),
+        [name]: value,
       };
     });
   }
@@ -39,8 +38,9 @@ export default function App() {
         <Header />
         <Form
           handleImage={() => changeMeme()}
-          handleText={(e) => changeText(e, e.target.name)}
+          handleText={(e) => changeText(e)}
           meme={setCurrMeme}
+          memeData={currMeme}
         />
         <View memeData={currMeme} />
         <Footer />
